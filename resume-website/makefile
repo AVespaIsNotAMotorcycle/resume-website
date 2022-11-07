@@ -5,5 +5,5 @@ tests: FORCE
 
 #todo: make a staging branch
 staging: tests
-	-get commit -a
+	-git commit -a
 	git push origin master

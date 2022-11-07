@@ -1,17 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
-function Navbar() {
+function Navbar({ pages }) {
+  const navElements = pages.map((page) => <Link className="navbar-link" key={page.link} to={page.link}>{page.text}</Link>);
+
   return (
-    <>
-      <nav>
+    <div className="navbar-container">
+      <nav className="navbar-nav">
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/Projects">Projects</Link></li>
+          {navElements}
         </ul>
       </nav>
-    </>
+    </div>
   );
 }
 
 export default Navbar;
+
+Navbar.propTypes = {
+  pages: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+  })),
+};
