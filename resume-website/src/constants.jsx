@@ -1,8 +1,8 @@
 // URLS
 const BASE_URL = '/resume-website';
 const HOME_URL = BASE_URL;
-const PROJECTS_URL = BASE_URL + '/Projects';
-const CONTACT_URL = BASE_URL + '/Contact';
+const PROJECTS_URL = BASE_URL.concat('/Projects');
+const CONTACT_URL = BASE_URL.concat('/Contact');
 
 const PAGES = [
   { link: HOME_URL, text: 'Home' },

@@ -23,5 +23,5 @@ Navbar.propTypes = {
   pages: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
-  })),
+  })).isRequired,
 };
