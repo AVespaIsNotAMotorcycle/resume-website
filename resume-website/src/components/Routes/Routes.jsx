@@ -8,6 +8,7 @@ import {
 // High-level components
 import Home from '../Home/Home';
 import ProjectsPage from '../ProjectsPage/ProjectsPage';
+import Contact from '../Contact/Contact';
 
 // URL constants
 import {
@@ -22,7 +23,7 @@ function Routes() {
       <Route path="/" element={<Navigate to={HOME_URL} />} />
       <Route path={HOME_URL} element={<Home />} />
       <Route path={PROJECTS_URL} element={<ProjectsPage />} />
-      <Route path={CONTACT_URL} element={<ProjectsPage />} />
+      <Route path={CONTACT_URL} element={<Contact />} />
     </Switch>
   );
 }
