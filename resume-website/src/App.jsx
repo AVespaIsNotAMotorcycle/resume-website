@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { PAGES } from './constants.js';
+import { PAGES } from './constants';
 
 import Routes from './components/Routes/Routes';
 import Navbar from './components/Navbar/Navbar';
