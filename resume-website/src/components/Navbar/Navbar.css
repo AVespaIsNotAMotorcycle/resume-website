@@ -1,0 +1,19 @@
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  background-color: DarkSlateGrey;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-link {
+  padding: 10px;
+  text-decoration: none;
+  color: FloralWhite;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.navbar-padder {
+  border: 1px solid red;
+}

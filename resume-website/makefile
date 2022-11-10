@@ -7,4 +7,4 @@ tests: FORCE
 staging: tests
 	-git commit -a
 	git push origin master
-	npm run build
+	npm run deploy
