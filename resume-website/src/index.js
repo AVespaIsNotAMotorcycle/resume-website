@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+/* eslint-disable react/jsx-filename-extension */
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -13,6 +14,7 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>,
 );
+/* eslint-enable react/jsx-filename-extension */
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
