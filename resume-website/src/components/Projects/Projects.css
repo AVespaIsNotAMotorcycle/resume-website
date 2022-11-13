@@ -1,0 +1,28 @@
+.project-tile {
+  border: 1px solid grey;
+  border-radius: 25px;
+  flex: 1 0 0%;
+  padding-bottom: 20%;
+  margin: 5px;
+  text-decoration: none;
+  color: black;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-tile:hover {
+  background-color: DarkSlateGrey;
+  color: FloralWhite;
+}
+
+.project-tile-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px;
+}
