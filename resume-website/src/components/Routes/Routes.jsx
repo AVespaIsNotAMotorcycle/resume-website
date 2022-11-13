@@ -14,6 +14,7 @@ import Contact from '../Contact/Contact';
 import {
   HOME_URL,
   PROJECTS_URL,
+  PROJECT_ID_URL,
   CONTACT_URL,
 } from '../../constants';
 
@@ -23,6 +24,7 @@ function Routes() {
       <Route path="/" element={<Navigate to={HOME_URL} />} />
       <Route path={HOME_URL} element={<Home />} />
       <Route path={PROJECTS_URL} element={<Projects />} />
+      <Route path={PROJECT_ID_URL} element={<Projects />} />
       <Route path={CONTACT_URL} element={<Contact />} />
     </Switch>
   );
