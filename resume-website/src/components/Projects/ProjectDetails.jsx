@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Markdown from 'react-remarkable';
 
 function ProjectDetails({ projectInfo }) {
-  const { name, desc } = projectInfo;
+  const { body } = projectInfo;
   return (
     <div>
-      <h1>{name}</h1>
-      <p>{desc}</p>
+      <Markdown source={body} />
     </div>
   );
 }
@@ -18,5 +18,6 @@ ProjectDetails.propTypes = {
     name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
   }).isRequired,
 };

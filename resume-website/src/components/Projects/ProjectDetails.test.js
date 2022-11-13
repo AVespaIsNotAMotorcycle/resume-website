@@ -9,6 +9,9 @@ const blankProject = {
   name: 'Project Name',
   id: 'ProjectID',
   desc: 'This is a test project',
+  body: `#ProjectName
+
+        This is a test project`,
 };
 
 it('renders without crashing', async () => {

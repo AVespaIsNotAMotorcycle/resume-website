@@ -5,25 +5,8 @@ import { PROJECTS_URL } from '../../constants';
 import ProjectTile from './ProjectTile';
 import ProjectDetails from './ProjectDetails';
 
+import PROJECT_LIST from './constants';
 import './Projects.css';
-
-const PROJECT_LIST = {
-  Groovy: {
-    name: 'Groovy',
-    id: 'Groovy',
-    desc: 'A web app for discovering smaller artists on Spotify.',
-  },
-  LDA: {
-    name: 'LDA',
-    id: 'LDA',
-    desc: 'A web app for insights into NYC and NYS legislation.',
-  },
-  ResumeSite: {
-    name: 'Resume Site',
-    id: 'ResumeSite',
-    desc: 'This very website!',
-  },
-};
 
 function ProjectLinkList() {
   const linkList = Object.keys(PROJECT_LIST).map((key) => {
