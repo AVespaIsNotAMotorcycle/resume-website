@@ -9,7 +9,7 @@ const blankProject = {
   name: 'Project Name',
   id: 'ProjectID',
   desc: 'This is a test project',
-  body: `#ProjectName
+  body: `# ProjectName
 
         This is a test project`,
 };

@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Markdown from 'react-remarkable';
+import markdownParser from '../Common/MarkdownParser';
+import Text from '../Common/Text';
 
 function ProjectDetails({ projectInfo }) {
   const { body } = projectInfo;
+  const [html, setHtml] = useState(<div />);
+  useEffect(() => {
+    setHtml(markdownParser(body));
+  }, [body]);
   return (
-    <div>
-      <Markdown source={body} />
-    </div>
+    <Text>
+      {html}
+    </Text>
   );
 }
 
