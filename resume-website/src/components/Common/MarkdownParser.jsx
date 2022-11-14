@@ -2,6 +2,9 @@ import React from 'react';
 
 export default function markdownParser(text) {
   const newText = text;
+  if (!text) {
+    return <p dangerouslySetInnerHTML={{ __html: '' }} />; // eslint-disable-line
+  }
   const toHTML = newText
     .replace(/^###### (.*$)/gim, '<h6>$1</h6>') // h6 tag
     .replace(/^##### (.*$)/gim, '<h5>$1</h5>') // h5 tag
@@ -12,6 +15,8 @@ export default function markdownParser(text) {
     .replace(/\*\*(.*)\*\*/gim, '<b>$1</b>') // bold text
     .replace(/\*(.*)\*/gim, '<i>$1</i>') // italic text
     .replace(/^- (.*$)/gim, `<li key=${'test'}>$1</li>`) // unordered list item
+    .replace(/\[(.*)\]\((.*)\)/gim, '<a href=$2>$1</a>') // link
+    .replace(/^\s*$/gim, '<br>') // paragraph break
     .trim();
   const toComponent = <p dangerouslySetInnerHTML={{ __html: toHTML }} />; // eslint-disable-line
   return toComponent;
