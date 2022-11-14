@@ -8,7 +8,7 @@ const CONTACT_URL = BASE_URL.concat('/Contact');
 const PAGES = [
   { link: HOME_URL, text: 'Home' },
   { link: PROJECTS_URL, text: 'Projects' },
-  { link: CONTACT_URL, text: 'Contact' },
+  // { link: CONTACT_URL, text: 'Contact' },
 ];
 
 const screenWidth = document.documentElement.clientWidth || window.innerWidth;
