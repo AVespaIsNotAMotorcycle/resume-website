@@ -5,6 +5,8 @@ const GROOVY = {
   body: `
 # Groovy
 
+[groovy.samuelmebersole.com](http://groovy.samuelmebersole.com)
+
 Groovy is a web app that recommends lesser-known Spotify artists based on listening history.`,
 };
 
