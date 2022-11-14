@@ -1,10 +1,17 @@
 import React from 'react';
+import markdownParser from '../Common/MarkdownParser';
+import ABOUT from './constants';
+import HEADSHOT from './headshot.JPG';
+import './Home.css';
 
 function Home() {
+  const desc = markdownParser(ABOUT);
+
   return (
-    <h1>
-      Welcome to my homepage!
-    </h1>
+    <div>
+      <img className="home-headshot" src={HEADSHOT} alt="headshot" />
+      {desc}
+    </div>
   );
 }
 
