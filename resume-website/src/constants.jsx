@@ -11,6 +11,10 @@ const PAGES = [
   { link: CONTACT_URL, text: 'Contact' },
 ];
 
+const screenWidth = document.documentElement.clientWidth || window.innerWidth;
+const MOBILE_WIDTH = 767;
+const MOBILE = screenWidth < MOBILE_WIDTH;
+
 export {
   BASE_URL,
   HOME_URL,
@@ -18,4 +22,5 @@ export {
   PROJECT_ID_URL,
   CONTACT_URL,
   PAGES,
+  MOBILE,
 };
