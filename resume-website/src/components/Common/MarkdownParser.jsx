@@ -15,6 +15,7 @@ export default function markdownParser(text) {
     .replace(/\*\*(.*)\*\*/gim, '<b>$1</b>') // bold text
     .replace(/\*(.*)\*/gim, '<i>$1</i>') // italic text
     .replace(/^- (.*$)/gim, `<li key=${'test'}>$1</li>`) // unordered list item
+    .replace(/^!\[(.*)\]\((.*)\)/gim, '<img alt="$1" src="$2">') // image
     .replace(/\[(.*)\]\((.*)\)/gim, '<a href=$2>$1</a>') // link
     .replace(/^\s*$/gim, '<br>') // paragraph break
     .trim();

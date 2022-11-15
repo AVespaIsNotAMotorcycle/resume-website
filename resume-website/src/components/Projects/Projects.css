@@ -26,3 +26,34 @@
   justify-content: center;
   margin: 5px;
 }
+
+.proj-det-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0vh 5vh 0vh 5vh;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.proj-det-padding {
+  width: 25%;
+}
+
+img {
+  display: block;
+  margin: 10px auto 0px auto;
+  width: 55%;
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+  img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  img {
+    width: 70%;
+  }
+}
