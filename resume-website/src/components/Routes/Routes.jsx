@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Routes as Switch,
   Route,
-  Navigate,
 } from 'react-router-dom';
 
 // High-level components
@@ -12,7 +11,6 @@ import Contact from '../Contact/Contact';
 
 // URL constants
 import {
-  HOME_URL,
   PROJECTS_URL,
   PROJECT_ID_URL,
   CONTACT_URL,
@@ -21,8 +19,7 @@ import {
 function Routes() {
   return (
     <Switch>
-      <Route path="/" element={<Navigate to={HOME_URL} />} />
-      <Route path={HOME_URL} element={<Home />} />
+      <Route exact path="/" element={<Home />} />
       <Route path={PROJECTS_URL} element={<Projects />} />
       <Route path={PROJECT_ID_URL} element={<Projects />} />
       <Route path={CONTACT_URL} element={<Contact />} />
