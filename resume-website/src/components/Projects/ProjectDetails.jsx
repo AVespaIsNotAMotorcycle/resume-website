@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import markdownParser from '../Common/MarkdownParser';
-import Text from '../Common/Text';
 
 function ProjectDetails({ projectInfo }) {
   const { body } = projectInfo;
@@ -10,9 +9,9 @@ function ProjectDetails({ projectInfo }) {
     setHtml(markdownParser(body));
   }, [body]);
   return (
-    <Text>
+    <div>
       {html}
-    </Text>
+    </div>
   );
 }
 
