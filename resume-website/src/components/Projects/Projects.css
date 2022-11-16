@@ -2,8 +2,8 @@
   border: 1px solid grey;
   border-radius: 25px;
   flex: 1 0 0%;
-  padding-bottom: 20%;
   margin: 5px;
+  padding: 5px 15px 20% 15px;
   text-decoration: none;
   color: black;
   transition: 0.2s;
@@ -12,6 +12,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  min-width: 300px;
+  max-width: 30%;
 }
 
 .project-tile:hover {
