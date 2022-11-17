@@ -46,6 +46,7 @@ img {
   margin: 10px auto 0px auto;
   width: 55%;
   border-radius: 25px;
+  border: 1px solid DarkSlateGrey;
 }
 
 @media only screen and (max-width: 768px) {
