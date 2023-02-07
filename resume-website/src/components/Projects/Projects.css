@@ -52,6 +52,7 @@
   text-justify: inter-word;
   width: 90%;
   justify-content: center;
+  overflow: scroll;
 }
 
 .proj-det-item-web {

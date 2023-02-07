@@ -10,9 +10,12 @@ function ProjectDetailsWeb({ markdown, image }) {
       <div className="proj-det-item-web">
         {markdown}
       </div>
+      {image
+      && (
       <div className="proj-det-item-web">
         {image}
       </div>
+      )}
     </div>
   );
 }
@@ -42,12 +45,20 @@ export default ProjectDetails;
 
 ProjectDetailsWeb.propTypes = {
   markdown: PropTypes.instanceOf(Object).isRequired,
-  image: PropTypes.instanceOf(Object).isRequired,
+  image: PropTypes.instanceOf(Object),
+};
+
+ProjectDetailsWeb.defaultProps = {
+  image: null,
 };
 
 ProjectDetailsMobile.propTypes = {
   markdown: PropTypes.instanceOf(Object).isRequired,
-  image: PropTypes.instanceOf(Object).isRequired,
+  image: PropTypes.instanceOf(Object),
+};
+
+ProjectDetailsMobile.defaultProps = {
+  image: null,
 };
 
 ProjectDetails.propTypes = {
@@ -56,6 +67,6 @@ ProjectDetails.propTypes = {
     id: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
   }).isRequired,
 };
