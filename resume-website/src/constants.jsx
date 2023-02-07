@@ -1,12 +1,12 @@
 // URLS
 const BASE_URL = '';
-const HOME_URL = BASE_URL;
+const HOME_URL = `${BASE_URL}/`;
 const PROJECTS_URL = BASE_URL.concat('/Projects');
 const PROJECT_ID_URL = BASE_URL.concat('/Projects/:projectID');
 const CONTACT_URL = BASE_URL.concat('/Contact');
 
 const PAGES = [
-  { link: HOME_URL, text: 'Home' },
+  { link: HOME_URL, text: 'Home', footerLink: PROJECTS_URL },
   { link: PROJECTS_URL, text: 'Projects' },
   // { link: CONTACT_URL, text: 'Contact' },
 ];

@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { act } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import Home from './Home';
 
-let container = document.createElement('div');
+afterEach(cleanup);
 
 it('renders without crashing', async () => {
-  act(() => {
-    const root = ReactDOM.createRoot(container).render(
-      <Home />
-    );
-  });
+  render(<Home />);
 });

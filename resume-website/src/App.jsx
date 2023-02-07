@@ -2,10 +2,7 @@ import React from 'react';
 import './App.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import { PAGES } from './constants';
-
 import Routes from './components/Routes/Routes';
-import Navbar from './components/Navbar/Navbar';
 
 const theme = createTheme({
   palette: {
@@ -22,7 +19,6 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <Navbar pages={PAGES} />
         <Routes />
       </ThemeProvider>
     </div>
