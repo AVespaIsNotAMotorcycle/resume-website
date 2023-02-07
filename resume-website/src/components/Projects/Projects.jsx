@@ -38,8 +38,7 @@ function Projects() {
     );
   }
   return (
-    <div>
-      <h2>Here is a list of my projects:</h2>
+    <div className="projects">
       { ProjectLinkList() }
     </div>
   );

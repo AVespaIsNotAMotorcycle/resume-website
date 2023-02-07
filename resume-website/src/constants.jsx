@@ -6,8 +6,8 @@ const PROJECT_ID_URL = BASE_URL.concat('/Projects/:projectID');
 const CONTACT_URL = BASE_URL.concat('/Contact');
 
 const PAGES = [
-  { link: HOME_URL, text: 'Home', footerLink: PROJECTS_URL },
-  { link: PROJECTS_URL, text: 'Projects' },
+  { link: HOME_URL, footerText: 'Projects', footerLink: PROJECTS_URL },
+  { link: PROJECTS_URL, headerText: 'Home', headerLink: HOME_URL },
   // { link: CONTACT_URL, text: 'Contact' },
 ];
 

@@ -10,6 +10,7 @@ import Home from '../Home/Home';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 
 // URL constants
 import {
@@ -20,7 +21,12 @@ import {
 } from '../../constants';
 
 function Routes() {
-  const [link, setLink] = useState({ text: '', footerLink: '' });
+  const [link, setLink] = useState({
+    footerText: undefined,
+    headerText: undefined,
+    footerLink: undefined,
+    headerLink: undefined,
+  });
 
   const location = useLocation();
 
@@ -28,21 +34,24 @@ function Routes() {
     PAGES.forEach((page) => {
       if (page.link !== location.pathname) { return; }
       setLink({
-        text: page.text,
+        footerText: page.footerText,
+        headerText: page.headerText,
         footerLink: page.footerLink,
+        headerLink: page.headerLink,
       });
     });
   }, [location]);
 
   return (
     <>
+      <Header text={link.headerText} link={link.headerLink} />
       <Switch>
         <Route exact path="/" element={<Home />} />
         <Route path={PROJECTS_URL} element={<Projects />} />
         <Route path={PROJECT_ID_URL} element={<Projects />} />
         <Route path={CONTACT_URL} element={<Contact />} />
       </Switch>
-      <Footer text={link.text} link={link.footerLink} />
+      <Footer text={link.footerText} link={link.footerLink} />
     </>
   );
 }

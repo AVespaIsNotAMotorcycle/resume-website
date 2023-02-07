@@ -1,6 +1,17 @@
+.projects {
+  background-color: DarkSlateGrey;
+  height: 90vh;
+  padding-top: 10vh;
+}
+
+.projects-header {
+  margin: 0;
+}
+
 .project-tile {
-  border: 1px solid grey;
+  border: 1px solid black;
   border-radius: 25px;
+  background-color: FloralWhite;
   flex: 1 0 0%;
   margin: 5px;
   padding: 5px 15px 20% 15px;
