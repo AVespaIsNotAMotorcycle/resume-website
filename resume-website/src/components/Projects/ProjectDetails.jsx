@@ -4,42 +4,50 @@ import markdownParser from '../Common/MarkdownParser';
 import { MOBILE } from '../../constants';
 import './Projects.css';
 
-function ProjectDetailsWeb({ markdown }) {
+function ProjectDetailsWeb({ markdown, image }) {
   return (
-    <div className="proj-det-container">
-      <div className="proj-det-padding" />
-      {markdown}
-      <div className="proj-det-padding" />
+    <div className="proj-det-container-web">
+      <div className="proj-det-item-web">
+        {markdown}
+      </div>
+      <div className="proj-det-item-web">
+        {image}
+      </div>
     </div>
   );
 }
 
-function ProjectDetailsMobile({ markdown }) {
+function ProjectDetailsMobile({ markdown, image }) {
   return (
-    <div className="proj-det-container">
+    <div className="proj-det-container-mobile">
       {markdown}
+      {image}
     </div>
   );
 }
 
 function ProjectDetails({ projectInfo }) {
-  const { body } = projectInfo;
+  const { body, image } = projectInfo;
   const [md, setMD] = useState(<div />);
+  const [img, setImg] = useState(<div />);
   useEffect(() => {
     setMD(markdownParser(body));
+    setImg(markdownParser(image));
   }, [body]);
-  if (MOBILE) { return (<ProjectDetailsMobile markdown={md} />); }
-  return (<ProjectDetailsWeb markdown={md} />);
+  if (MOBILE) { return (<ProjectDetailsMobile markdown={md} image={img} />); }
+  return (<ProjectDetailsWeb markdown={md} image={img} />);
 }
 
 export default ProjectDetails;
 
 ProjectDetailsWeb.propTypes = {
   markdown: PropTypes.instanceOf(Object).isRequired,
+  image: PropTypes.instanceOf(Object).isRequired,
 };
 
 ProjectDetailsMobile.propTypes = {
   markdown: PropTypes.instanceOf(Object).isRequired,
+  image: PropTypes.instanceOf(Object).isRequired,
 };
 
 ProjectDetails.propTypes = {
@@ -48,5 +56,6 @@ ProjectDetails.propTypes = {
     id: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
   }).isRequired,
 };

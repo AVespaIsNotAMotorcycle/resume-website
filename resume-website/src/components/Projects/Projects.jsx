@@ -1,45 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { PROJECTS_URL } from '../../constants';
 
-import ProjectTile from './ProjectTile';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 import ProjectDetails from './ProjectDetails';
-
 import PROJECT_LIST from './constants';
+import Button from '../Common/Button';
+
 import './Projects.css';
 
-function ProjectLinkList() {
-  const linkList = Object.keys(PROJECT_LIST).map((key) => {
-    const { name, id, desc } = PROJECT_LIST[key];
-    const lTo = PROJECTS_URL.concat('/', id);
-    const l = <ProjectTile key={id} title={name} link={lTo} desc={desc} />;
-    return (l);
-  });
-  return (
-    <div className="project-tile-container">
-      {linkList}
-    </div>
-  );
-}
-
 function Projects() {
-  /* If passed a projectID, attempt to render the details for that project.
-   * If the ID is invalid, display an error instead.
-   */
   const { projectID } = useParams();
-  if (projectID) {
-    const projectInfo = PROJECT_LIST[projectID];
-    if (!projectInfo) {
-      const error = 'Project with id '.concat(projectID, ' not found.');
-      return (<h1>{error}</h1>);
-    }
-    return (
-      <ProjectDetails projectInfo={projectInfo} />
-    );
-  }
+  const [displayProject, setDisplayProject] = useState('Groovy');
+  const keys = Object.keys(PROJECT_LIST);
+
+  useEffect(() => {
+    if (!projectID) { return; }
+    setDisplayProject(projectID);
+  }, [projectID]);
+
+  const calcTargetIndex = (delta) => {
+    let targetIndex = keys.indexOf(displayProject) + delta;
+    if (targetIndex >= keys.length) { targetIndex = 0; }
+    if (targetIndex < 0) { targetIndex = keys.length - 1; }
+    return targetIndex;
+  };
+
+  const switchProject = (delta) => {
+    setDisplayProject(keys[calcTargetIndex(delta)]);
+  };
+
   return (
     <div className="projects">
-      { ProjectLinkList() }
+      <Button
+        onClick={() => switchProject(-1)}
+        color="secondary"
+        sx={{ marginLeft: '5px' }}
+      >
+        <ArrowBackIosIcon />
+        {PROJECT_LIST[keys[calcTargetIndex(-1)]].name}
+      </Button>
+      <ProjectDetails
+        projectInfo={PROJECT_LIST[displayProject]}
+      />
+      <Button
+        onClick={() => switchProject(1)}
+        color="secondary"
+        sx={{ marginRight: '5px' }}
+      >
+        {PROJECT_LIST[keys[calcTargetIndex(1)]].name}
+        <ArrowForwardIosIcon />
+      </Button>
     </div>
   );
 }
