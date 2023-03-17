@@ -1,0 +1,21 @@
+.footer {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  color: white;
+}
+
+.footer-text {
+  margin: 5px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: 0.15s;
+}
+
+a:hover {
+  color: DimGrey;
+  text-decoration: none;
+}

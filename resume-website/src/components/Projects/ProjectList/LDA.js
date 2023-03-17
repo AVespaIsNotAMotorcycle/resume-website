@@ -14,6 +14,13 @@ LDA ("Legislative Data Analytics") was my capstone project for my Computer Scien
 
 Users can learn about the structure of NYS and NYC government, find their local representatives based on a given address, and view graphs visualizing the bills put forward by various representatives and committees in each of the three bodies that we provide data on. Additionally, graphs depicting the activity over time of various city council representatives and the similarity in voting patterns between council representatives are available.`,
   image: `![Screenshot of the City Council voting activity graph](${process.env.PUBLIC_URL}/assets/images/lda-activeness.png)`,
+  tags: [
+    'Node.js',
+    'Express.js',
+    'React.js',
+    'DigitalOcean',
+    'PostgreSQL',
+  ],
 };
 
 export default LDA;

@@ -1,0 +1,17 @@
+.tag {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 25px;
+  background-color: transparent;
+  color: inherit;
+}
+
+.tag-active {
+  background-color: DarkSlateGrey;
+  border: 1px solid DarkSlateGrey;
+  color: FloralWhite;
+}
+
+.tag-inactive {
+  border: 1px solid LightSlateGrey;
+}

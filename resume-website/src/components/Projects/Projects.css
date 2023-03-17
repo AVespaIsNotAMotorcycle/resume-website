@@ -1,7 +1,13 @@
+.filter-select {
+  margin: 110px 5px 10px 5px;
+  padding: 5px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  border-radius: 25px;
+  display: flex;
+}
+
 .projects {
-  background-color: DarkSlateGrey;
-  height: 90vh;
-  padding-top: 10vh;
+  background-color: FloralWhite;
   display: flex;
   flex-direction: row;
   color: white;
@@ -12,12 +18,12 @@
 }
 
 .project-tile {
-  border: 1px solid black;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
   border-radius: 25px;
   background-color: FloralWhite;
   flex: 1 0 0%;
   margin: 5px;
-  padding: 5px 15px 20% 15px;
+  padding: 5px 5px;
   text-decoration: none;
   color: black;
   transition: 0.2s;
@@ -26,8 +32,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  min-width: 300px;
-  max-width: 30%;
+  width: 20vw;
+  height: 20vw;
 }
 
 .project-tile:hover {
@@ -41,6 +47,13 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 5px;
+}
+
+.project-tile-tag-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }
 
 .proj-det-container-web {

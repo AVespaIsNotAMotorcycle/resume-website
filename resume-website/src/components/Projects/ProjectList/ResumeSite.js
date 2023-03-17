@@ -12,6 +12,10 @@ A single-page static site built with React and served via Github Pages. During d
 
 One interesting interaction I observed was between Jest and two markdown parsers (react-markdown and remarkable), in that both cause warnings on unit tests involving markdown. My friend (@mthrndr on Github) had built an incomplete markdown parser for another project, so with his permission I borrowed and expanded it.
 `,
+  tags: [
+    'React.js',
+    'GitHub Pages',
+  ],
 };
 
 export default RESUMESITE;
