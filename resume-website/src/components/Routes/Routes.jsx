@@ -14,7 +14,6 @@ import Header from '../Header/Header';
 
 // URL constants
 import {
-  PAGES,
   PROJECTS_URL,
   PROJECT_ID_URL,
   CONTACT_URL,
@@ -31,20 +30,23 @@ function Routes() {
   const location = useLocation();
 
   useEffect(() => {
-    let set = false;
-    PAGES.forEach((page) => {
-      let path = location.pathname;
-      if (path.length > 1 && path[path.length - 1] === '/') { path = path.slice(0, path.length - 1); }
-      if (set) { return; }
-      if (!page.link.match(path)) { return; }
-      set = true;
+    let path = location.pathname;
+    if (path.length > 1 && path[path.length - 1] === '/') { path = path.slice(0, path.length - 1); }
+    if (path === '/') {
       setLink({
-        footerText: page.footerText,
-        headerText: page.headerText,
-        footerLink: page.footerLink,
-        headerLink: page.headerLink,
+        footerText: 'Projects',
+        headerText: '',
+        footerLink: PROJECTS_URL,
+        headerLink: '',
       });
-    });
+    } else {
+      setLink({
+        footerText: '',
+        headerText: 'Home',
+        footerLink: '',
+        headerLink: '/',
+      });
+    }
   }, [location]);
 
   return (
