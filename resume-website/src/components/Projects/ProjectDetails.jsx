@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+import CloseIcon from '@mui/icons-material/Close';
+import Button from '../Common/Button';
 import markdownParser from '../Common/MarkdownParser';
-import { MOBILE } from '../../constants';
+import { MOBILE, PROJECTS_URL } from '../../constants';
 import './Projects.css';
 
 function ProjectDetailsWeb({ markdown, image }) {
   return (
     <div className="proj-det-container-web">
+      <div className="proj-det-close-button">
+        <Link to={PROJECTS_URL}>
+          <Button variant="contained" type="icon"><CloseIcon /></Button>
+        </Link>
+      </div>
       <div className="proj-det-item-web">
         {markdown}
       </div>
@@ -30,6 +39,7 @@ function ProjectDetailsMobile({ markdown, image }) {
 }
 
 function ProjectDetails({ projectInfo }) {
+  if (!projectInfo) { return null; }
   const { body, image } = projectInfo;
   const [md, setMD] = useState(<div />);
   const [img, setImg] = useState(<div />);
@@ -68,5 +78,9 @@ ProjectDetails.propTypes = {
     desc: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
     image: PropTypes.string,
-  }).isRequired,
+  }),
+};
+
+ProjectDetails.defaultProps = {
+  projectInfo: undefined,
 };

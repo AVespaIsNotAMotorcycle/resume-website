@@ -31,8 +31,13 @@ function Routes() {
   const location = useLocation();
 
   useEffect(() => {
+    let set = false;
     PAGES.forEach((page) => {
-      if (page.link !== location.pathname) { return; }
+      let path = location.pathname;
+      if (path.length > 1 && path[path.length - 1] === '/') { path = path.slice(0, path.length - 1); }
+      if (set) { return; }
+      if (!page.link.match(path)) { return; }
+      set = true;
       setLink({
         footerText: page.footerText,
         headerText: page.headerText,

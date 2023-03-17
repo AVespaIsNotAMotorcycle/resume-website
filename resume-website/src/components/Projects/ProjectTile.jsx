@@ -9,15 +9,31 @@ function ProjectTile({
   desc,
   link,
   tags,
+  titleOnly,
+  setProjectID,
 }) {
+  const details = (
+    <>
+      <p className="project-tile-text">{desc}</p>
+      <div className="project-tile-tag-div">
+        {tags}
+      </div>
+    </>
+  );
+  const className = (titleOnly
+    ? 'project-tile-title-only'
+    : 'project-tile'
+  );
   return (
-    <Link to={link} className="project-tile">
+    <Link
+      to={link}
+      className={className}
+      onClick={setProjectID}
+    >
       <div>
         <h2 className="project-tile-title">{title}</h2>
-        <p className="project-tile-text">{desc}</p>
-        <div className="project-tile-tag-div">
-          {tags}
-        </div>
+        {!titleOnly
+        && details}
       </div>
     </Link>
   );
@@ -30,9 +46,13 @@ ProjectTile.propTypes = {
   desc: PropTypes.string,
   link: PropTypes.string.isRequired,
   tags: PropTypes.instanceOf(Array),
+  titleOnly: PropTypes.bool,
+  setProjectID: PropTypes.func,
 };
 
 ProjectTile.defaultProps = {
   desc: '',
   tags: [],
+  titleOnly: false,
+  setProjectID: () => {},
 };

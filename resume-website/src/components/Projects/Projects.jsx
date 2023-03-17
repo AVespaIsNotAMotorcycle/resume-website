@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
+import { PROJECTS_URL } from '../../constants';
 import PROJECT_LIST from './constants';
 import ProjectTile from './ProjectTile';
+import ProjectDetails from './ProjectDetails';
 import Tag from './Tag';
 
 import './Projects.css';
@@ -20,7 +22,7 @@ function generateTagButtons(tags, filters, toggleTag) {
   return buttons;
 }
 
-function generateTiles(filters, toggleTag) {
+function generateTiles(filters, toggleTag, titleOnly = false) {
   const anyTagSelected = (tags) => {
     if (filters.length === 0) { return true; }
     for (let i = 0; i < tags.length; i += 1) { if (filters.includes(tags[i])) { return true; } }
@@ -40,8 +42,9 @@ function generateTiles(filters, toggleTag) {
         key={id}
         title={name}
         desc={desc}
-        link=""
+        link={`${PROJECTS_URL}/${id}`}
         tags={buttons}
+        titleOnly={titleOnly}
       />
     );
   });
@@ -65,6 +68,11 @@ Filter.propTypes = {
   toggleTag: PropTypes.func.isRequired,
 };
 
+function fetchProjectInfo(id) {
+  if (!id) { return null; }
+  return PROJECT_LIST[id];
+}
+
 function Projects() {
   const [filters, setFilters] = useState([]);
   const toggleTag = (tag) => {
@@ -77,16 +85,33 @@ function Projects() {
     }
   };
 
+  const [params] = useState(useParams());
+  const [projectID, setProjectID] = useState(params.projectID);
+  const [projectInfo, setProjectInfo] = useState(fetchProjectInfo(projectID));
+  useEffect(() => {
+    setProjectInfo(
+      fetchProjectInfo(projectID),
+    );
+  }, [projectID]);
+  useEffect(() => {
+    const terms = window.location.pathname.split('/');
+    setProjectID(terms.pop());
+  }, [window.location.href]);
+
   const [tiles, setTiles] = useState(generateTiles(filters, toggleTag));
   useEffect(() => {
-    setTiles(generateTiles(filters, toggleTag));
-  }, [filters]);
+    const titleOnly = !(!projectInfo);
+    setTiles(generateTiles(filters, toggleTag, titleOnly));
+  }, [filters, projectInfo]);
 
   return (
     <>
       <Filter filters={filters} setFilters={setFilters} toggleTag={toggleTag} />
       <div className="projects">
-        {tiles}
+        <div className="project-list" style={{ flexDirection: ((projectInfo) ? 'column' : 'row') }}>
+          {tiles}
+        </div>
+        <ProjectDetails projectInfo={projectInfo} />
       </div>
     </>
   );

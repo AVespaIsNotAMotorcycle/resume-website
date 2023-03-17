@@ -19,7 +19,10 @@ export default Button;
 Button.propTypes = {
   type: PropTypes.string,
   props: PropTypes.instanceOf(Object),
-  children: PropTypes.instanceOf(Array),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };
 
 Button.defaultProps = {
