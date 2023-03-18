@@ -8,7 +8,8 @@ const NOVIIMD = {
 
 [View the GitHub repo](https://github.com/AVespaIsNotAMotorcycle/noviimd)
 
-A markdown parser written in React with an editor hosted via GitHub Pages. Try it out at http://noviimd.samuelmebersole.com/ or install with 'npm install noviimd'.`,
+
+A markdown parser written in React with an editor hosted via GitHub Pages. Install with the command 'npm install noviimd'`,
   tags: [
     'React.js',
     'Jest',
