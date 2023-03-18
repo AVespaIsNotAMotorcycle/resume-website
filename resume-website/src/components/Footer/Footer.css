@@ -12,7 +12,7 @@
   transition: 0.15s;
 }
 
-footer:hover {
+.footer-text:hover {
   color: DimGrey;
   text-decoration: none;
 }

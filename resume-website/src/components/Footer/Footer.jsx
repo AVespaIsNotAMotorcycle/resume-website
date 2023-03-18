@@ -9,7 +9,7 @@ function Footer({ text, link }) {
   if (!text || !link) { return null; }
   return (
     <div className="footer">
-      <Link to={link} className="footer-link">
+      <Link to={link} className="footer-text">
         <h1 className="footer-text">{text}</h1>
         <SvgIcon fontSize="large">
           <ExpandMoreIcon />

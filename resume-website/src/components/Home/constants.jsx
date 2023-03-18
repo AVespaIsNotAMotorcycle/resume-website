@@ -8,8 +8,8 @@ After graduating, I began work at DataMixMaster, where I am a frontend developer
 Feel free to check out my projects on this site or on my Github, and send me an email if you think I'd be right for your team!
 
 ### Links
-- Email: [samuelmebersole@gmail.com](mailto:samuelmebersole@gmail.com)
-- Github: [AVespaIsNotAMotorcycle](https://github.com/AVespaIsNotAMotorcycle)
+Email: [samuelmebersole@gmail.com](mailto:samuelmebersole@gmail.com)
+Github: [AVespaIsNotAMotorcycle](https://github.com/AVespaIsNotAMotorcycle)
 `;
 
 export default ABOUT;

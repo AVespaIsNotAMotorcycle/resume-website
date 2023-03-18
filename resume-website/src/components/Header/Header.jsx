@@ -9,7 +9,7 @@ function Header({ text, link }) {
   if (!text || !link) { return null; }
   return (
     <div className="header">
-      <Link to={link} className="header-link">
+      <Link to={link} className="header-text">
         <SvgIcon fontSize="large">
           <ExpandLessIcon />
         </SvgIcon>

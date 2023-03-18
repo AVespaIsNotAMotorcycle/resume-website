@@ -41,6 +41,11 @@
   text-align: justify;
   text-justify: inter-word;
   margin: 0vh 5vh 0vh 5vh;
+  color: FloralWhite;
+}
+
+.home-container-text a {
+  color: FloralWhite;
 }
 
 .home-container-child {

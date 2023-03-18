@@ -1,11 +1,9 @@
 import React from 'react';
-import markdownParser from '../Common/MarkdownParser';
+import MarkdownParser from 'noviimd';
 import ABOUT from './constants';
 import './Home.css';
 
 function Home() {
-  const desc = markdownParser(ABOUT);
-
   return (
     <div className="home" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/home-background.JPG)` }}>
       <div className="home-padding" />
@@ -19,7 +17,7 @@ function Home() {
           </div>
         </div>
         <div className="home-container-text">
-          {desc}
+          <MarkdownParser className="home-container-text" md={ABOUT} />
         </div>
       </div>
     </div>
