@@ -7,15 +7,12 @@
 
 .footer-text {
   margin: 5px;
-}
-
-a {
   color: white;
   text-decoration: none;
   transition: 0.15s;
 }
 
-a:hover {
+footer:hover {
   color: DimGrey;
   text-decoration: none;
 }

@@ -12,15 +12,12 @@
 
 .header-text {
   margin: 5px;
-}
-
-a {
   color: white;
   text-decoration: none;
   transition: 0.15s;
 }
 
-a:hover {
+.header-text:hover {
   color: DimGrey;
   text-decoration: none;
 }
